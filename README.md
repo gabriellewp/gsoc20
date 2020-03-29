@@ -45,7 +45,7 @@ There are 2 options available:
   output_try7   917825179b0a53308a1aa981ea45b586
   output_try5   cab80e17d2a924b568144476fbf8a985
   ```
-  **2nd Exercise: Jupyterlab Extension for Weather API**
+**2nd Exercise: Jupyterlab Extension for Weather API**
   
   
 
