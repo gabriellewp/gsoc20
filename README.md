@@ -3,11 +3,11 @@
 **1st Exercise: Python program for reading and writing data**
 
 There are 2 options available:
-- **Write binaries to n files, this option requires 3 inputs from user:**
+- **Write binaries to n files, this option requires 4 user inputs:**
     * directory path to store the files
     * substring of file name (minimum 5 characters), e.g output_try
-    * size of file in bytes
-    * number of files
+    * x file size in bytes
+    * n number of files
     ```shell
     Writing n random files, please input the directory, file name, total files and file size
     Enter the path of your directory:/home/gabrielle/Documents/GSOC20
@@ -26,7 +26,7 @@ There are 2 options available:
     /home/gabrielle/Documents/GSOC20/output_try10
     10  random files were created with size  1048576  each
     ```
-- **Read files, this option requires 2 inputs from user:**
+- **Read files, this option requires 2 user inputs:**
   * directory path of the stored files
   * substring of file name
   ```shell
