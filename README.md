@@ -4,7 +4,8 @@
 
 There are 2 options available:
 - **Increase the Data Rate Limit**
-   This can be done by adding c.NotebookApp.iopub_data_rate_limit = 1e10 in jupyter_notebook_config.py 
+   * This can be done by adding c.NotebookApp.iopub_data_rate_limit = <upper_limit> in jupyter_notebook_config.py, e.g c.NotebookApp.iopub_data_rate_limit = 1e10. 
+   * Locate jupyter_notebook_config.py to .jupyter directory
 - **Write binaries to n files, this option requires 4 user inputs:**
     * directory path to store the files
     * substring of file name (minimum 5 characters), e.g output_try
@@ -59,6 +60,11 @@ There are 2 options available:
  ![screenshot.png](figures/extension_screenshot.png "screenshot.png")
 
 **3rd Exercise: Kernel Extension for Weather API**
-  * To use the kernel extension, copy the weatherapi_kernel_ext.py into .ipyton directory. 
+  * To use the kernel extension, copy the weatherapi_kernel_ext.py into .ipyton directory
+  * To load the extension use %load_ext weatherapi_kernel_ext
    ![screenshot_kernel.png](figures/extension_kernel.png "screenshot_kernel.png")
+  * the output should look like this
+    ```shell
+    {"current": {"cloudcover": 25, "feelslike": 1, "humidity": 41, "is_day": "yes", "observation_time": "04:31 PM", "precip": 0, "pressure": 1024, "temperature": 5, "uv_index": 4, "visibility": 10, "weather_code": 116, "weather_descriptions": ["Partly cloudy"], "weather_icons": ["https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"], "wind_degree": 10, "wind_dir": "N", "wind_speed": 19}, "location": {"country": "Germany", "lat": "48.150", "localtime": "2020-03-31 18:31", "localtime_epoch": 1585679460, "lon": "11.583", "name": "Munich", "region": "Bayern", "timezone_id": "Europe/Berlin", "utc_offset": "2.0"}, "request": {"language": "en", "query": "Munich, Germany", "type": "City", "unit": "m"}}
+    ```
 
