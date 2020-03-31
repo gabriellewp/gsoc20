@@ -3,6 +3,8 @@
 **1st Exercise: Python program for reading and writing data**
 
 There are 2 options available:
+- **Increase the Data Rate Limit**
+   This can be done by adding c.NotebookApp.iopub_data_rate_limit = 1e10 in jupyter_notebook_config.py 
 - **Write binaries to n files, this option requires 4 user inputs:**
     * directory path to store the files
     * substring of file name (minimum 5 characters), e.g output_try
