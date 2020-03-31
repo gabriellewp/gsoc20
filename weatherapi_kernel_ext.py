@@ -7,6 +7,7 @@ from IPython.core.magic import register_line_magic
 import requests
 import json
 import os, logging
+import sys
 
 def skip(line, cell=None):
     '''Skips execution of the current line/cell.'''
@@ -14,14 +15,18 @@ def skip(line, cell=None):
 
 def load_ipython_extension(shell):
     log = logging.getLogger('weatherapi')
-    log.name = 'weatherapi.connector'
+    log.name = 'weatherapi'
     log.setLevel(logging.INFO)
+    handler = logging.StreamHandler(sys.stderr)
+    formatter = logging.Formatter('%(name)s - %(levelname)s - %(message)s')
+    handler.setFormatter(formatter)
+    log.handlers = [handler]
+
     log.info("lolll")
+    log.info("ipkernel _imported"+str(ipykernel_imported))
     if ipykernel_imported:
         if not isinstance(shell, zmqshell.ZMQInteractiveShell):
             log.error("WeatherAPI: Ipython not running through notebook. So exiting")
-            return
-        else:
             return
 
     log.info("Starting weather api extension")
