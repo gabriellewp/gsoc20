@@ -4,7 +4,6 @@ import {
 import axios from 'axios';
 import "./lib/env"
 
-console.log("yyyy", process.env.ACCESS_KEY)
 class WeatherWidget extends Widget {
     constructor(){
         super();
@@ -65,19 +64,17 @@ class WeatherWidget extends Widget {
 
     }
     APIcall(query:string){
-        //const Url = 'http://api.weatherstack.com/current'
-        const url_mock = "http://www.mocky.io/v2/5e7665df2f0000e757986064"
-        console.log(process.env)
-        console.log("access_key", process.env.ACCESS_KEY)
-        // const params={
-        //    access_key:process.env.ACCESS_KEY,
-        //    query:query
-        //  }
+        const Url = 'http://api.weatherstack.com/current'
+        //const url_mock = "http://www.mocky.io/v2/5e7665df2f0000e757986064"
+        const params={
+           access_key:"29d1520f101b647b4aed9134c62899c1",
+           query:query
+         }
       
         let loc_summary2 = document.getElementById("loc_summary")
         let summary2 = document.getElementById("summary")
         let weather_icon2 = document.getElementById("weather_icon") as HTMLImageElement
-        axios.get(url_mock)
+        axios.get(Url, {params})
         .then(function (response) {
           console.log(response)
       
@@ -97,7 +94,7 @@ class WeatherWidget extends Widget {
           summary2.innerHTML=error
         })
         loc_summary2.innerHTML="City: "+query
-        summary2.innerHTML="Data not found"
+        summary2.innerHTML="Loading ..."
       }
       onChange(){
         let val = document.getElementById('userInput') as HTMLInputElement;

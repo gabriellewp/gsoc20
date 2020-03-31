@@ -52,8 +52,10 @@ There are 2 options available:
    * @lumino/widgets v.1.11.1
    * dotenv v.8.2.0
  - **Installation:**
-   * the module has been pushed to npm.org, in order to install: jupyter labextension install @your-npm-username/jupyterlab_apod
+   * the module has been pushed to npm.org, in order to install: jupyter labextension install @gpoerw/jupyterlab-weatherapi
+ ![screenshot.png](figures/extension_screenshot.png "screenshot.png")
  
-   
+**3rd Exercise: Kernel Extension for Weather API**
+  In WIP, weatherapi_kernel_ext.py
   
 
