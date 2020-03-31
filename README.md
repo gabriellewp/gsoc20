@@ -53,14 +53,8 @@ There are 2 options available:
    * dotenv v.8.2.0
  - **Installation:**
    * the module has been pushed to npm.org, in order to install: jupyter labextension install @gpoerw/jupyterlab-weatherapi
-<<<<<<< HEAD
-<<<<<<< HEAD
+
  ![screenshot.png](figures/extension_screenshot.png "screenshot.png")
-=======
->>>>>>> 8b063eb... dotenv still not working, so leaving it ...
-=======
- ![screenshot.png](figures/extension_screenshot.png "screenshot.png")
->>>>>>> caaa8af... update README.md
  
 **3rd Exercise: Kernel Extension for Weather API**
   In WIP, weatherapi_kernel_ext.py
