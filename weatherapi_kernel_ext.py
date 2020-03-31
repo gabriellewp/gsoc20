@@ -22,8 +22,6 @@ def load_ipython_extension(shell):
     handler.setFormatter(formatter)
     log.handlers = [handler]
 
-    log.info("lolll")
-    log.info("ipkernel _imported"+str(ipykernel_imported))
     if ipykernel_imported:
         if not isinstance(shell, zmqshell.ZMQInteractiveShell):
             log.error("WeatherAPI: Ipython not running through notebook. So exiting")
@@ -46,8 +44,9 @@ class Weatherapiconnector:
 
     def register_comm(self):
         self.ipython.kernel.comm_manager.register_target(
-            "Weatherapiconnector", self.target_func
+            "weatherapiconn", self.target_func
         )
+
     def target_func(self, comm, msg):
         self.log.info("Established connection to frontend")
         self.log.debug("Received message:%s", str(msg))
@@ -59,17 +58,18 @@ class Weatherapiconnector:
 
     def handle_comm_message(self,msg):
         #handle message from frontend
-        content = msg['city_name']
+        content = msg['content']['data']
+        self.log.info(content)
         if content!="":
             parameters ={
                 "access_key":"29d1520f101b647b4aed9134c62899c1",
                 "query":content
             }
             response = requests.get("http://api.weatherstack.com/current", params= parameters)
-            print(response.json)
+            json_response = response.json()
             self.send(
                 {
-                    response.json
+                    json.dumps(json_response, sort_keys=True)
                 }
             )
     def send(self, msg):

@@ -55,8 +55,8 @@ There are 2 options available:
    * the module has been pushed to npm.org, in order to install: jupyter labextension install @gpoerw/jupyterlab-weatherapi
 
  ![screenshot.png](figures/extension_screenshot.png "screenshot.png")
- 
+
 **3rd Exercise: Kernel Extension for Weather API**
-  In WIP, weatherapi_kernel_ext.py
-  
+  * To use the kernel extension, copy the weatherapi_kernel_ext.py into .ipyton directory. 
+   ![screenshot_kernel.png](figures/extension_kernel.png "screenshot_kernel.png")
 
