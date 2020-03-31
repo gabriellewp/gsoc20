@@ -63,7 +63,7 @@ There are 2 options available:
   * To use the kernel extension, copy the weatherapi_kernel_ext.py into .ipyton directory
   * To load the extension use %load_ext weatherapi_kernel_ext
    ![screenshot_kernel.png](figures/extension_kernel.png "screenshot_kernel.png")
-  * the output should look like this
+  * the json_response variable should look like this
     ```shell
     {"current": {"cloudcover": 25, "feelslike": 1, "humidity": 41, "is_day": "yes", "observation_time": "04:31 PM", "precip": 0, "pressure": 1024, "temperature": 5, "uv_index": 4, "visibility": 10, "weather_code": 116, "weather_descriptions": ["Partly cloudy"], "weather_icons": ["https://assets.weatherstack.com/images/wsymbols01_png_64/wsymbol_0002_sunny_intervals.png"], "wind_degree": 10, "wind_dir": "N", "wind_speed": 19}, "location": {"country": "Germany", "lat": "48.150", "localtime": "2020-03-31 18:31", "localtime_epoch": 1585679460, "lon": "11.583", "name": "Munich", "region": "Bayern", "timezone_id": "Europe/Berlin", "utc_offset": "2.0"}, "request": {"language": "en", "query": "Munich, Germany", "type": "City", "unit": "m"}}
     ```
